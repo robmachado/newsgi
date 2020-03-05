@@ -46,6 +46,8 @@ class CreateEmployeesTable extends Migration
             $table->string('graduation', 200);
             $table->string('schooling_register', 300);
             $table->string('photo', 200)->nullable();
+            $table->date('effective_date');
+            $table->date('dismissal_date')->nullable();
             $table->boolean('active')->default(true);
             $table->timestamps();
         });
