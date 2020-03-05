@@ -15,6 +15,12 @@ class CreateCalibrationsTable extends Migration
     {
         Schema::create('calibrations', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->bigInteger('instrument_id');
+            $table->string('certificate_number', 25);
+            $table->date('calibration_date');
+            $table->string('responsable', 200);
+            $table->string('conclusion', 1);
+            $table->string('filename', 200)->nullable();
             $table->timestamps();
         });
     }

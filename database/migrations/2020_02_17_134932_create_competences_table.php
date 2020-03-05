@@ -15,6 +15,18 @@ class CreateCompetencesTable extends Migration
     {
         Schema::create('competences', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->bigInteger('employe_id')->unsigned();
+            $table->longText('necessary_skills');
+            $table->longText('skills');
+            $table->longText('necessary_knowledge');
+            $table->longText('knowledge');
+            $table->longText('necessary_training');
+            $table->longText('training');
+            $table->longText('necessary_experience');
+            $table->longText('experience');
+            $table->string('necessary_schooling', 100);
+            $table->string('schooling', 100);
+            $table->text('conclusion');
             $table->timestamps();
         });
     }
